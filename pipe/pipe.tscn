@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://urukqv8484a2"]
+
+[ext_resource type="Script" uid="uid://cknugki5x61au" path="res://pipe/pipe.gd" id="1_78010"]
+[ext_resource type="Texture2D" uid="uid://c6p0uqicvsd" path="res://assets/pipe.png" id="1_bepn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bepn3"]
+size = Vector2(132, 535)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78010"]
+size = Vector2(139, 574)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arayy"]
+size = Vector2(127, 280)
+
+[node name="Pipe" type="Node2D"]
+z_index = -100
+script = ExtResource("1_78010")
+
+[node name="OnderBuis" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(14, 376)
+scale = Vector2(0.585185, 0.679518)
+texture = ExtResource("1_bepn3")
+
+[node name="BovenBuis" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13.5, -455)
+scale = Vector2(0.588889, 0.725301)
+texture = ExtResource("1_bepn3")
+flip_v = true
+
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="OnderHitBox" type="CollisionShape2D" parent="HitArea"]
+position = Vector2(14, 382.5)
+shape = SubResource("RectangleShape2D_bepn3")
+
+[node name="BovenHitBox" type="CollisionShape2D" parent="HitArea"]
+position = Vector2(13.5, -462)
+shape = SubResource("RectangleShape2D_78010")
+
+[node name="ScoreArea" type="Area2D" parent="."]
+
+[node name="ScoreHitBox" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(11, -30)
+shape = SubResource("RectangleShape2D_arayy")
+
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]
+[connection signal="body_exited" from="ScoreArea" to="." method="_on_score_area_body_exited"]

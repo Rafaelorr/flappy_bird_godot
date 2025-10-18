@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3wy0544suey5"]
+
+[ext_resource type="PackedScene" uid="uid://lf08bnf1nb2g" path="res://player/player.tscn" id="1_c651c"]
+[ext_resource type="Script" uid="uid://of6coa6rdm2s" path="res://game_over.gd" id="2_3wy1v"]
+[ext_resource type="PackedScene" uid="uid://urukqv8484a2" path="res://pipe/pipe.tscn" id="3_kfbq2"]
+[ext_resource type="PackedScene" uid="uid://bw7vsxyqua6g8" path="res://menu/score_counter.tscn" id="4_4dugh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_c651c")]
+position = Vector2(179, 177)
+
+[node name="Game_Over" type="Node2D" parent="."]
+position = Vector2(505, 250)
+script = ExtResource("2_3wy1v")
+
+[node name="Label" type="Label" parent="Game_Over"]
+texture_filter = 1
+offset_right = 197.0
+offset_bottom = 79.0
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Window" type="Window" parent="Game_Over"]
+disable_3d = true
+title = "GAME OVER"
+initial_position = 1
+size = Vector2i(250, 250)
+visible = false
+unresizable = true
+always_on_top = true
+
+[node name="Pipe" parent="." instance=ExtResource("3_kfbq2")]
+position = Vector2(1221, 268)
+
+[node name="Score" parent="." instance=ExtResource("4_4dugh")]
+
+[connection signal="hit" from="Pipe" to="player" method="_on_pipe_hit"]
+[connection signal="hit" from="Pipe" to="Game_Over" method="_on_pipe_hit"]
+[connection signal="scored" from="Pipe" to="Score" method="_on_pipe_scored"]

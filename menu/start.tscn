@@ -1,0 +1,230 @@
+[gd_scene load_steps=19 format=3 uid="uid://b8j04lhad7tgn"]
+
+[ext_resource type="Texture2D" uid="uid://dflldt5pdob4f" path="res://assets/cover.png" id="1_ots34"]
+[ext_resource type="Script" uid="uid://gcdeqpf441pt" path="res://menu/start.gd" id="1_qn1rc"]
+[ext_resource type="Texture2D" uid="uid://ce0y20miiu0kw" path="res://assets/spelers/bird_2.png" id="3_oiuna"]
+[ext_resource type="Texture2D" uid="uid://kpygtqcp3pcb" path="res://assets/spelers/bird_1.png" id="4_4a3qj"]
+[ext_resource type="Texture2D" uid="uid://cf3828bs3pn8m" path="res://assets/spelers/bird_3.png" id="5_g38d0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ots34"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pob1m"]
+atlas = ExtResource("3_oiuna")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gophc"]
+atlas = ExtResource("3_oiuna")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0nl4"]
+atlas = ExtResource("3_oiuna")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8ukj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pob1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gophc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0nl4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1colc"]
+atlas = ExtResource("4_4a3qj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwiky"]
+atlas = ExtResource("4_4a3qj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhwaj"]
+atlas = ExtResource("4_4a3qj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3iev3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1colc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwiky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhwaj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvlwx"]
+atlas = ExtResource("5_g38d0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r34np"]
+atlas = ExtResource("5_g38d0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj1oh"]
+atlas = ExtResource("5_g38d0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxms4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvlwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r34np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj1oh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qn1rc")
+
+[node name="Achtergrond" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 327)
+scale = Vector2(1.76308, 1.284)
+texture = ExtResource("1_ots34")
+
+[node name="StartButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526
+anchor_top = 0.522
+anchor_right = 0.526
+anchor_bottom = 0.522
+offset_left = -104.952
+offset_top = -40.256
+offset_right = 104.048
+offset_bottom = 40.744
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ots34")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ots34")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ots34")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ots34")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ots34")
+text = "START"
+
+[node name="KleurVeranderButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526
+anchor_top = 0.522
+anchor_right = 0.526
+anchor_bottom = 0.522
+offset_left = -103.952
+offset_top = 1.74399
+offset_right = 105.048
+offset_bottom = 82.744
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ots34")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ots34")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ots34")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ots34")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ots34")
+text = "KIES EEN ANDERE SPELER"
+
+[node name="Window" type="Window" parent="."]
+title = "Kies een andere speler"
+initial_position = 1
+size = Vector2i(500, 500)
+visible = false
+unresizable = true
+
+[node name="BlauweVogel" type="Node2D" parent="Window"]
+
+[node name="BlauweVogel" type="AnimatedSprite2D" parent="Window/BlauweVogel"]
+z_index = 4000
+texture_filter = 1
+position = Vector2(61.125, 46.75)
+scale = Vector2(5.35937, 5.03125)
+sprite_frames = SubResource("SpriteFrames_r8ukj")
+
+[node name="KiesBlauw" type="Button" parent="Window/BlauweVogel"]
+offset_left = 34.0
+offset_top = 102.0
+offset_right = 90.0
+offset_bottom = 133.0
+text = "Kies"
+
+[node name="OranjeVogel" type="Node2D" parent="Window"]
+
+[node name="OranjeVogel" type="AnimatedSprite2D" parent="Window/OranjeVogel"]
+z_index = 4000
+texture_filter = 1
+position = Vector2(245.875, 60.625)
+scale = Vector2(5.89062, 4.79687)
+sprite_frames = SubResource("SpriteFrames_3iev3")
+frame = 2
+frame_progress = 0.586063
+
+[node name="KiesOranje" type="Button" parent="Window/OranjeVogel"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.111
+anchor_right = 0.5
+anchor_bottom = 0.111
+offset_left = 218.0
+offset_top = 102.0
+offset_right = 274.0
+offset_bottom = 133.0
+text = "Kies"
+
+[node name="RodeVogel" type="Node2D" parent="Window"]
+position = Vector2(1, 0)
+
+[node name="RodeVogel" type="AnimatedSprite2D" parent="Window/RodeVogel"]
+z_index = 4000
+texture_filter = 1
+position = Vector2(428, 52)
+scale = Vector2(5.3125, 4.73438)
+sprite_frames = SubResource("SpriteFrames_oxms4")
+
+[node name="KiesRood" type="Button" parent="Window/RodeVogel"]
+anchors_preset = -1
+anchor_left = 0.86
+anchor_top = 0.12
+anchor_right = 0.86
+anchor_bottom = 0.12
+offset_left = 402.0
+offset_top = 102.0
+offset_right = 458.0
+offset_bottom = 133.0
+text = "Kies"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="KleurVeranderButton" to="." method="_on_kleur_verander_button_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/BlauweVogel/KiesBlauw" to="." method="_on_kies_blauw_pressed"]
+[connection signal="pressed" from="Window/OranjeVogel/KiesOranje" to="." method="_on_kies_oranje_pressed"]
+[connection signal="pressed" from="Window/RodeVogel/KiesRood" to="." method="_on_kies_rood_pressed"]
